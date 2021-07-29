@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+<!-- {% block heading %}
+first LoginPage
+{% endblock %} -->
+
+{% block content %}
+<div>
+    <nav class="navbar navbar-dark bg-dark">
+        <h5 class="text-white h4">
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+            <a href="/">Logout</a>
+        </h5>
+        
+    </nav>
+
+</div>
+
+
+<div style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;margin-top: 70px;font-size: 20px;">
+    
+    <h4 style="font-size: 200%;margin-left: 5%;">Home page</h4>
+    <img style="float:right;width:270px;height:200px;margin-right: 5%;"  src="{{ url_for('static', filename='bookshelf.jpg')}}" alt="Search" class="image">
+    <p style="float: left; margin-left: 20%;">Welcome to Mini Library</p><br>
+    <!-- <img style="float:right;width:270px;height:200px;"  src="{{ url_for('static', filename='bookshelf.jpg')}}" alt="Search" class="image"> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mali:wght@300&display=swap" rel="stylesheet">
+    <p style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 200%;float: left;margin-left: 12%">"When in doubt go to library"</p>
+</div>
+
+
+{% endblock %}
+

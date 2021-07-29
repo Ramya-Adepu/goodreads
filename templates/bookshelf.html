@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+<!-- {% block heading %}
+first LoginPage
+{% endblock %} -->
+
+{% block content %}
+<div>
+    <nav class="navbar navbar-dark bg-dark">
+        <h5 class="text-white h4">
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+            <a href="/">Logout</a>
+        </h5>
+        
+    </nav>
+
+</div>
+
+
+<h4>Book Shelf</h4>
+<div style="text-align: center;margin-left: 15%;margin-right: 15%;">
+    <h3>Added book details</h3><br>
+    <br>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">name</th>
+            <th scope="col">isbn</th>
+            <th scope="col">title</th>
+            <th scope="col">author</th>
+            <th scope="col">year</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          {% for Shelf in users %}
+          <tr>
+            <form action="{{url_for('bookshelf')}}" method="POST">
+            <td>{{Shelf.name}}</td>
+            <input type="hidden" name="name" value="{{Shelf.name}}">
+            <td>{{Shelf.isbn}}</td>
+            <input type="hidden" name="isbn" value="{{Shelf.isbn}}">
+
+            <td>{{Shelf.title}}</td>
+            <input type="hidden" name="title" value="{{Shelf.title}}">
+
+            <td>{{Shelf.author}}</td>
+            <input type="hidden" name="author" value="{{Shelf.author}}">
+
+            <td>{{Shelf.year}}</td>
+            <input type="hidden"name="year" value="{{Shelf.year}}">
+
+            <td> <button class="btn btn-danger" type="submit" name="delete" >Delete</button></td>
+          </form>
+          </tr>
+          {% endfor %}
+          
+        </tbody>
+      </table>
+</div>
+
+
+{% endblock %}
+
